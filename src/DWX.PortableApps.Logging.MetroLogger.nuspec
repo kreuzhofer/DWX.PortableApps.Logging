@@ -5,6 +5,8 @@
         <version>1.0.0</version>
         <authors>Daniel Kreuzhofer</authors>
         <owners>Daniel Kreuzhofer</owners>
+        <licenseUrl>https://github.com/kreuzhofer/DWX.PortableApps.Logging/blob/master/LICENSE.txt</licenseUrl>
+        <projectUrl>https://github.com/kreuzhofer/DWX.PortableApps.Logging</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>DWX.PortableApps.Logging.MetroLogger</description>
         <copyright>2015 Microsoft Deutschland GmbH</copyright>

@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>DWX.PortableApps.Logging</id>
         <version>1.0.0</version>
         <authors>Daniel Kreuzhofer</authors>
         <owners>Daniel Kreuzhofer</owners>
+        <licenseUrl>https://github.com/kreuzhofer/DWX.PortableApps.Logging/blob/master/LICENSE.txt</licenseUrl>
+        <projectUrl>https://github.com/kreuzhofer/DWX.PortableApps.Logging</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>DWX.PortableApps.Logging</description>
         <copyright>2015 Microsoft Deutschland GmbH</copyright>
