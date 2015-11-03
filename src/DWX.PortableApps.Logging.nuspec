@@ -11,6 +11,6 @@
     </metadata>
     <files>
         <file src="bin\DWX.PortableApps.Logging\DWX.PortableApps.Logging.dll" target="lib\netcore45\DWX.PortableApps.Logging.dll" />
-        <file src="bin\DWX.PortableApps.Logging\DWX.PortableApps.Logging.dll" target="lib\netcore45\DWX.PortableApps.Logging.dll" />
+        <file src="bin\DWX.PortableApps.Logging\DWX.PortableApps.Logging.dll" target="lib\portable-net45+wp80+win8+wpa81+aspnetcore50\DWX.PortableApps.Logging.dll" />
     </files>
 </package>

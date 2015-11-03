@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWX.PortableApps.Logging", "DWX.PortableApps.Logging\DWX.PortableApps.Logging.csproj", "{E715A970-9601-47D1-8554-7B7AFD08DEC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWX.PortableApps.Logging.MetroLogger", "DWX.PortableApps.Logging.MetroLog\DWX.PortableApps.Logging.MetroLogger.csproj", "{CEF01290-41DF-41A3-9B79-31962404F283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81", "DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81\DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81.csproj", "{1EEF44E5-3607-4A43-A8CB-7241C46A6D4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{E715A970-9601-47D1-8554-7B7AFD08DEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E715A970-9601-47D1-8554-7B7AFD08DEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E715A970-9601-47D1-8554-7B7AFD08DEC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEF01290-41DF-41A3-9B79-31962404F283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEF01290-41DF-41A3-9B79-31962404F283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEF01290-41DF-41A3-9B79-31962404F283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEF01290-41DF-41A3-9B79-31962404F283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EEF44E5-3607-4A43-A8CB-7241C46A6D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EEF44E5-3607-4A43-A8CB-7241C46A6D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EEF44E5-3607-4A43-A8CB-7241C46A6D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EEF44E5-3607-4A43-A8CB-7241C46A6D4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
