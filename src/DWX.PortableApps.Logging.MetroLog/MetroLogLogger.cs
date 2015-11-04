@@ -86,12 +86,12 @@ namespace DWX.PortableApps.Logging.MetroLogger
 
         public void Fatal(string message, Exception ex = null)
         {
-            this.logger.Fatal(message, ex);
+            this.logger.Error("FATAL|"+message, ex); // This seems to be neccessary as Fatal does not write into the logfile consistently
         }
 
         public void Fatal(string message, params object[] ps)
         {
-            this.logger.Fatal(message, ps);
+            this.logger.Error("FATAL|"+message, ps); // This seems to be neccessary as Fatal does not write into the logfile consistently
         }
 
         public void Log(LogLevel logLevel, string message, Exception ex = null, Dictionary<string, string> propertyBag = null)

@@ -153,6 +153,10 @@ namespace DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81
                     }
                 }
                 _telemetryClient.TrackException(tel);
+                if (logLevel == LogLevel.Fatal)
+                {
+                    _telemetryClient.Flush(); // quickly empty the cache as this might be an application crash
+                }
             }
         }
 
