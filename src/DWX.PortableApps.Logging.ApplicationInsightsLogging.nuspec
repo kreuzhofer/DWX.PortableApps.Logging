@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>DWX.PortableApps.Logging.ApplicationInsightsLogging</id>
+        <version>1.0.0</version>
+        <authors>Daniel Kreuzhofer</authors>
+        <owners>Daniel Kreuzhofer</owners>
+        <licenseUrl>https://github.com/kreuzhofer/DWX.PortableApps.Logging/blob/master/LICENSE.txt</licenseUrl>
+        <projectUrl>https://github.com/kreuzhofer/DWX.PortableApps.Logging</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>DWX.PortableApps.Logging.ApplicationInsightsLogging</description>
+        <copyright>2015 Microsoft Deutschland GmbH</copyright>
+        <dependencies>
+            <dependency id="DWX.PortableApps.Logging" version="1.0.1" />
+            <dependency id="Microsoft.ApplicationInsights" version="1.2.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="bin\DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81\DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81.pdb" target="lib\portable-net45+wp80+win8+wpa81+aspnetcore50\DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81.pdb" />
+        <file src="bin\DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81\DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81.dll" target="lib\portable-net45+wp80+win8+wpa81+aspnetcore50\DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81.dll" />
+        <file src="**\*.cs" target="src" />
+    </files>
+</package>
