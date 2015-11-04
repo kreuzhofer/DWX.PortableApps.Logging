@@ -14,9 +14,9 @@ namespace DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81
         private TelemetryClient _telemetryClient;
         private string _name;
         private ApplicationInsightsLogManager _logManager;
-        private string _user;
-        private string _machine;
-        private string _domain;
+        private string _user = "N/A";
+        private string _machine = "N/A";
+        private string _domain = "N/A";
 
         private string GetHostName()
         {
@@ -31,9 +31,16 @@ namespace DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81
             _logManager = logManager;
             _telemetryClient = _logManager.TelemetryClient;
             _name = name;
-            _machine = GetHostName();
-            _user = CredentialCache.DefaultNetworkCredentials.UserName;
-            _domain = CredentialCache.DefaultNetworkCredentials.Domain;
+            try
+            {
+                _machine = GetHostName();
+                _user = CredentialCache.DefaultNetworkCredentials.UserName;
+                _domain = CredentialCache.DefaultNetworkCredentials.Domain;
+            }
+            catch
+            {
+                // ignored
+            }
         }
 
         public string Name
