@@ -11,7 +11,7 @@
         <description>DWX.PortableApps.Logging.ApplicationInsightsLogging</description>
         <copyright>2015 Microsoft Deutschland GmbH</copyright>
         <dependencies>
-            <dependency id="DWX.PortableApps.Logging" version="1.0.1" />
+            <dependency id="DWX.PortableApps.Logging" version="1.0.10" />
             <dependency id="Microsoft.ApplicationInsights" version="1.2.0" />
         </dependencies>
     </metadata>

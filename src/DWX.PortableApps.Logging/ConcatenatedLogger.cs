@@ -78,7 +78,7 @@ namespace DWX.PortableApps.Logging
         {
             foreach (var logger in _loggers)
             {
-                logger.Log(logLevel, message, ps);
+                logger.Log(logLevel, string.Format(message, ps));
             }
         }
 
@@ -106,11 +106,11 @@ namespace DWX.PortableApps.Logging
             }
         }
 
-        public void Log(LogLevel logLevel, string message, Exception exception)
+        public void Log(LogLevel logLevel, string message, Exception exception, Dictionary<string, string> propertyBag = null)
         {
             foreach (var logger in _loggers)
             {
-                logger.Log(logLevel, message, exception);
+                logger.Log(logLevel, message, exception, propertyBag);
             }
         }
     }

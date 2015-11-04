@@ -10,8 +10,9 @@ DEL *.nupkg
 %NUGET% SetApiKey %2
 
 FOR %%G IN (*.nuspec) DO (
-  %NUGET% pack %%G -Version %VERSION% -Symbols
+  %NUGET% pack %%G -Version %VERSION%
 )
+REM -Symbols
 
 FOR %%G IN (*.nupkg) DO (
   %NUGET% push %%G

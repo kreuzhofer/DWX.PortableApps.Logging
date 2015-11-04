@@ -108,7 +108,7 @@ namespace DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81
             Log(LogLevel.Fatal, message, ps);
         }
 
-        public void Log(LogLevel logLevel, string message, System.Exception ex = null)
+        public void Log(LogLevel logLevel, string message, System.Exception ex = null, Dictionary<string, string> propertyBag = null)
         {
             if (logLevel < _logManager.LogLevel)
             {
@@ -117,18 +117,41 @@ namespace DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81
             if (ex == null)
             {
                 var tel = new TraceTelemetry(message, GetLevel(logLevel));
-                tel.Properties.Add(new KeyValuePair<string, string>("Machine name", _machine));
-                tel.Properties.Add(new KeyValuePair<string, string>("User name", _user));
-                tel.Properties.Add(new KeyValuePair<string, string>("Domain name", _domain));
+                tel.Properties.Add(new KeyValuePair<string, string>("Machine_name", _machine));
+                tel.Properties.Add(new KeyValuePair<string, string>("User_name", _user));
+                tel.Properties.Add(new KeyValuePair<string, string>("Domain_name", _domain));
+                if (propertyBag != null)
+                {
+                    foreach (var prop in propertyBag)
+                    {
+                        tel.Properties.Add(prop.Key, prop.Value);
+                    }
+                }
                 _telemetryClient.TrackTrace(tel);
             }
             else
             {
                 var tel = new ExceptionTelemetry(ex);
                 tel.Properties.Add(new KeyValuePair<string, string>("Message", message));
-                tel.Properties.Add(new KeyValuePair<string, string>("Machine name", _machine));
-                tel.Properties.Add(new KeyValuePair<string, string>("User name", _user));
-                tel.Properties.Add(new KeyValuePair<string, string>("Domain name", _domain));
+                tel.Properties.Add(new KeyValuePair<string, string>("Machine_name", _machine));
+                tel.Properties.Add(new KeyValuePair<string, string>("User_name", _user));
+                tel.Properties.Add(new KeyValuePair<string, string>("Domain_name", _domain));
+                if (logLevel < LogLevel.Fatal)
+                {
+                    tel.HandledAt = ExceptionHandledAt.UserCode;
+                }
+                else
+                {
+                    tel.HandledAt = ExceptionHandledAt.Unhandled;
+                }
+                tel.SeverityLevel = GetLevel(logLevel);
+                if (propertyBag != null)
+                {
+                    foreach (var prop in propertyBag)
+                    {
+                        tel.Properties.Add(prop.Key, prop.Value);
+                    }
+                }
                 _telemetryClient.TrackException(tel);
             }
         }
@@ -141,27 +164,27 @@ namespace DWX.PortableApps.Logging.ApplicationInsightsLogging.Win81
         public void TrackMetric(string metricName, double metricValue)
         {
             var tel = new MetricTelemetry(metricName, metricValue);
-            tel.Properties.Add(new KeyValuePair<string, string>("Machine name", _machine));
-            tel.Properties.Add(new KeyValuePair<string, string>("User name", _user));
-            tel.Properties.Add(new KeyValuePair<string, string>("Domain name", _domain));
+            tel.Properties.Add(new KeyValuePair<string, string>("Machine_name", _machine));
+            tel.Properties.Add(new KeyValuePair<string, string>("User_name", _user));
+            tel.Properties.Add(new KeyValuePair<string, string>("Domain_name", _domain));
             _telemetryClient.TrackMetric(tel);
         }
 
         public void TrackEvent(string eventName)
         {
             var tel = new EventTelemetry(eventName);
-            tel.Properties.Add(new KeyValuePair<string, string>("Machine name", _machine));
-            tel.Properties.Add(new KeyValuePair<string, string>("User name", _user));
-            tel.Properties.Add(new KeyValuePair<string, string>("Domain name", _domain));
+            tel.Properties.Add(new KeyValuePair<string, string>("Machine_name", _machine));
+            tel.Properties.Add(new KeyValuePair<string, string>("User_name", _user));
+            tel.Properties.Add(new KeyValuePair<string, string>("Domain_name", _domain));
             _telemetryClient.TrackEvent(tel);
         }
 
         public void TrackPageView(string pageName)
         {
             var tel = new PageViewTelemetry(pageName);
-            tel.Properties.Add(new KeyValuePair<string, string>("Machine name", _machine));
-            tel.Properties.Add(new KeyValuePair<string, string>("User name", _user));
-            tel.Properties.Add(new KeyValuePair<string, string>("Domain name", _domain));
+            tel.Properties.Add(new KeyValuePair<string, string>("Machine_name", _machine));
+            tel.Properties.Add(new KeyValuePair<string, string>("User_name", _user));
+            tel.Properties.Add(new KeyValuePair<string, string>("Domain_name", _domain));
             _telemetryClient.TrackPageView(tel);
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MetroLog;
 
 namespace DWX.PortableApps.Logging.MetroLogger
@@ -93,10 +94,17 @@ namespace DWX.PortableApps.Logging.MetroLogger
             this.logger.Fatal(message, ps);
         }
 
-        public void Log(LogLevel logLevel, string message, Exception ex = null)
+        public void Log(LogLevel logLevel, string message, Exception ex = null, Dictionary<string, string> propertyBag = null)
         {
             MetroLog.LogLevel metroLogLevel;
             MetroLog.LogLevel.TryParse(logLevel.ToString(), out metroLogLevel);
+            if (propertyBag != null)
+            {
+                foreach (var prop in propertyBag)
+                {
+                    message += String.Format("\n{0}:{1}", prop.Key, prop.Value);
+                }
+            }
             this.logger.Log(metroLogLevel, message, ex);
         }
 

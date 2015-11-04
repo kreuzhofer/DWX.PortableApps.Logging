@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DWX.PortableApps.Logging
 {
@@ -36,9 +37,8 @@ namespace DWX.PortableApps.Logging
 
         void Fatal(string message, params object[] ps);
 
-        void Log(LogLevel logLevel, string message, Exception ex = null);
+        void Log(LogLevel logLevel, string message, Exception ex = null, Dictionary<string, string> propertyBag = null);
 
-        void Log(LogLevel logLevel, string message, params object[] ps);
         void TrackMetric(string metricName, double metricValue);
         void TrackEvent(string eventName);
         void TrackPageView(string pageName);

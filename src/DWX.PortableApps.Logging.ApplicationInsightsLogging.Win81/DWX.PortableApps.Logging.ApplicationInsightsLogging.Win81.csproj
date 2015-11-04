@@ -43,10 +43,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DWX.PortableApps.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DWX.PortableApps.Logging.1.0.5\lib\portable-net45+wp80+win8+wpa81+aspnetcore50\DWX.PortableApps.Logging.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.ApplicationInsights, Version=1.2.0.5639, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll</HintPath>
       <Private>True</Private>
@@ -54,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DWX.PortableApps.Logging\DWX.PortableApps.Logging.csproj">
+      <Project>{e715a970-9601-47d1-8554-7b7afd08dec6}</Project>
+      <Name>DWX.PortableApps.Logging</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
