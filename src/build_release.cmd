@@ -5,7 +5,7 @@ SET NUGET=.nuget\nuget.exe
 
 DEL *.nupkg
 
-"C:\Program Files (x86)\MSBuild\12.0\bin\amd64\msbuild" DWX.PortableApps.Logging.sln /target:Clean;Build /p:Configuration=Release;OutDir=..\bin
+"C:\Program Files (x86)\MSBuild\14.0\bin\amd64\msbuild" DWX.PortableApps.Logging.sln /target:Clean;Build /p:Configuration=Release;OutDir=..\bin
 
 %NUGET% SetApiKey %2
 
